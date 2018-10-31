@@ -2,7 +2,7 @@
 (require 2htdp/image)
 (require 2htdp/universe)
 
-;define constants here (e puck-radius stiker-radius left right)
+;define constants here (e(coefficient of restitution) puck-radius stiker-radius left right)
 
 (define e 0.8)
 (define puck-radius 25)
@@ -25,7 +25,7 @@
 (hash-set! state 'x-bot 500)
 (hash-set! state 'y-bot 80)
  
-
+;defining a collision
 (define (collision x-striker y-striker x-puck y-puck vel-x-striker vel-y-striker vel-x-puck vel-y-puck )
   (let* ([angle (atan (/ (- y-puck y-striker) (- x-puck x-striker)))]
          [sine (sin angle)]
